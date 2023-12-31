@@ -24,11 +24,11 @@ def save_data(train, test, output_path):
 def main():
 
     curr_dir = pathlib.Path(__file__)
-    home_dir = curr_dir.parent.parent.parent
-    params_file = home_dir.as_posix() + '/params.yaml'
-    params = yaml.safe_load(open(params_file))["make_dataset"]
+    home_dir = curr_dir.parent.parent.parent #going back to home directory where the folder has kept
+    params_file = home_dir.as_posix() + '/params.yaml' # as_posix() reads the file in the manner which python understands
+    params = yaml.safe_load(open(params_file))["make_dataset"] #reading the data from .yaml file
 
-    input_file = sys.argv[1]
+    input_file = sys.argv[1] #command line input for giving the path of data
     data_path = home_dir.as_posix() + input_file
     output_path = home_dir.as_posix() + '/data/processed'
     
