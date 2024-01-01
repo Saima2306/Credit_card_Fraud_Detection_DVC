@@ -1,0 +1,23 @@
+schema: '2.0'
+stages:
+  make_dataset:
+    cmd: python .\src\data\make_dataset.py .\data\raw\creditcard.csv
+    deps:
+    - path: .\data\raw\creditcard.csv
+      hash: md5
+      md5: 7171f7c012863797924072db293f47d4
+      size: 150828752
+    - path: .\src\data\make_dataset.py
+      hash: md5
+      md5: 46b3712db019cb8a109931bf23ff346a
+      size: 1519
+    params:
+      params.yaml:
+        make_dataset.seed: 2023
+        make_dataset.test_split: 0.1
+    outs:
+    - path: .\data\processed\
+      hash: md5
+      md5: 6ffbaaad7b4ac6e1afabed19a80b2560.dir
+      size: 0
+      nfiles: 1
