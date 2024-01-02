@@ -1,7 +1,7 @@
 creditcard-fraud-detection
 ==============================
 
-This project will detect the fraudaulent credit card transaction
+This project will detect the fraudulent credit card transaction
 
 Project Organization
 ------------
