@@ -8,10 +8,10 @@ stages:
       - make_dataset.test_split
       - make_dataset.seed
     outs:
-      - .\data\processed\
+      - .\processed_data\
       
   train_model:
-    cmd: python .\src\models\train_model.py .\data\processed\
+    cmd: python .\src\models\train_model.py .\processed_data\
     deps:
       - .\data\processed\
       - .\src\models\train_model.py
@@ -19,7 +19,7 @@ stages:
       - .\models\
       
   visualize:
-    cmd: python .\src\visualization\visualize.py .\models\model.joblib .\data\processed\
+    cmd: python .\src\visualization\visualize.py .\models\model.joblib .\processed_data\
     deps:
       - .\data\processed\
       - .\models\model.joblib

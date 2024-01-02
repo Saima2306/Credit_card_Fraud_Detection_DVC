@@ -30,7 +30,7 @@ def main():
 
     input_file = sys.argv[1] #command line input for giving the path of data
     data_path = home_dir.as_posix() + input_file
-    output_path = home_dir.as_posix() + '/data/processed'
+    output_path = home_dir.as_posix() + '/processed_data'
     
     data = load_data(data_path)
     train_data, test_data = split_data(data, params['test_split'], params['seed'])
